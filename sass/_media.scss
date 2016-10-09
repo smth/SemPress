@@ -3,7 +3,6 @@
   margin: 0px auto;
   text-align: center;
   background-color: #F5F5F5;
-  @include custom-rounded($border-radius, $border-radius, 0px, 0px);
   iframe, object, embed {
     margin: 0px auto;
     text-align: center;
@@ -98,10 +97,6 @@ div.aligncenter, .gallery {
   border: 0;
   vertical-align: middle;
 }
-#page img.avatar {
-  @include box-shadow(0, 1px, 5px, 0, rgba(0,0,0,0.2));
-  @include rounded(500px);
-}
 
 /* Image Attachments */
 .image-attachment div.entry-meta {
@@ -124,10 +119,6 @@ div.aligncenter, .gallery {
   margin: 15px auto;
   padding: 0;
   text-align: center;
-  background-color: #444;
-  background-image: -moz-linear-gradient(top,#555,#333);
-  background-image: -webkit-gradient(linear,left top,left bottom,from(#555),to(#333));
-  filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr="#555555",endColorStr="#333333");
 }
 
 .entry-meta .avatar {

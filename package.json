@@ -1,11 +1,11 @@
 {
   "name": "SemPress",
-  "version": "1.5.3",
-  "description": "SemPress is an extremely lightweight, responsive theme designed to show off your posts, quotes, and images. SemPress supports multiple post formats, widgets, and the option to upload a custom header or background image. The theme is based on HTML5 mixed with microformats, microformats v2 and microdata (Schema.org).",
+  "version": "1.0.0",
+  "description": "Minimal fork of SemPress - a semantic theme that supports multiple post formats, widgets, and the option to upload a custom header or background image. The theme is based on HTML5 mixed with microformats, microformats v2 and microdata (Schema.org).",
   "main": "Gruntfile.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pfefferle/SemPress.git"
+    "url": "https://github.com/smth/SemPress"
   },
   "bugs": {
     "url": "https://github.com/pfefferle/SemPress/issues"
@@ -35,15 +35,15 @@
     "featured-images"
   ],
   "author": {
-    "name": "Matthias Pfefferle",
-    "url": "http://notizblog.org/projects/sempress/"
+    "name": "Sam Smith",
+    "url": "http://smth.uk"
   },
   "license": {
     "name": "GNU General Public License",
     "version": "3",
     "url": "http://www.gnu.org/licenses/gpl.html"
   },
-  "homepage": "https://github.com/pfefferle/SemPress",
+  "homepage": "https://github.com/smth/SemPress",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-sass": "^0.9.2",

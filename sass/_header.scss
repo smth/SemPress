@@ -8,8 +8,6 @@
 }
 #site-image {
   float: left;
-  @include rounded($border-radius);
-  @include box-shadow(0, 1px, 5px, 0, rgba(0,0,0,0.2));
   margin-bottom: 40px;
   clear: both;
 }

@@ -118,11 +118,11 @@ if ( ! function_exists( 'sempress_setup' ) ) :
 		add_theme_support( 'custom-header', $custom_header_args );
 
 		// This theme supports custom backgrounds
-		$custom_background_args = array(
-			'default-color' => $themecolors['bg'],
-			'default-image' => get_template_directory_uri() . '/img/noise.png',
-		);
-		add_theme_support( 'custom-background', $custom_background_args );
+		//$custom_background_args = array(
+		//	'default-color' => $themecolors['bg'],
+		//	'default-image' => get_template_directory_uri() . '/img/noise.png',
+		//);
+		//add_theme_support( 'custom-background', $custom_background_args );
 
 		// Nicer WYSIWYG editor
 		add_editor_style( 'css/editor-style.css' );
@@ -148,41 +148,41 @@ function sempress_customize_register( $wp_customize ) {
 		'priority'	=> 35,
 	) );
 
-	$wp_customize->add_setting( 'sempress_textcolor' , array(
-		'default'	 => '#'.$themecolors['text'],
-		'transport'   => 'refresh',
-		'sanitize_callback' => 'sanitize_hex_color',
-	) );
+//	$wp_customize->add_setting( 'sempress_textcolor' , array(
+//		'default'	 => '#'.$themecolors['text'],
+//		'transport'   => 'refresh',
+//		'sanitize_callback' => 'sanitize_hex_color',
+//	) );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'sempress_textcolor', array(
-		'label'	  => __( 'Text Color', 'sempress' ),
-		'section'	=> 'colors',
-		'settings'   => 'sempress_textcolor',
-	) ) );
+//	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'sempress_textcolor', array(
+//		'label'	  => __( 'Text Color', 'sempress' ),
+//		'section'	=> 'colors',
+//		'settings'   => 'sempress_textcolor',
+//	) ) );
 
-	$wp_customize->add_setting( 'sempress_shadowcolor' , array(
-		'default'	 => '#'.$themecolors['shadow'],
-		'transport'   => 'refresh',
-		'sanitize_callback' => 'sanitize_hex_color',
-	) );
+//	$wp_customize->add_setting( 'sempress_shadowcolor' , array(
+//		'default'	 => '#'.$themecolors['shadow'],
+//		'transport'   => 'refresh',
+//		'sanitize_callback' => 'sanitize_hex_color',
+//	) );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'sempress_shadowcolor', array(
-		'label'	  => __( 'Shadow Color', 'sempress' ),
-		'section'	=> 'colors',
-		'settings'   => 'sempress_shadowcolor',
-	) ) );
+//	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'sempress_shadowcolor', array(
+//		'label'	  => __( 'Shadow Color', 'sempress' ),
+//		'section'	=> 'colors',
+//		'settings'   => 'sempress_shadowcolor',
+//	) ) );
 
-	$wp_customize->add_setting( 'sempress_bordercolor' , array(
-		'default'	 => '#'.$themecolors['border'],
-		'transport'   => 'refresh',
-		'sanitize_callback' => 'sanitize_hex_color',
-	) );
+//	$wp_customize->add_setting( 'sempress_bordercolor' , array(
+//		'default'	 => '#'.$themecolors['border'],
+//		'transport'   => 'refresh',
+//		'sanitize_callback' => 'sanitize_hex_color',
+//	) );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'sempress_bordercolor', array(
-		'label'	  => __( 'Border Color', 'sempress' ),
-		'section'	=> 'colors',
-		'settings'   => 'sempress_bordercolor',
-	) ) );
+//	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'sempress_bordercolor', array(
+//		'label'	  => __( 'Border Color', 'sempress' ),
+//		'section'	=> 'colors',
+//		'settings'   => 'sempress_bordercolor',
+//	) ) );
 
 	$wp_customize->add_setting( 'sempress_columns' , array(
 		'default'	 => 'multi',
@@ -209,29 +209,30 @@ add_action( 'customize_register', 'sempress_customize_register' );
  *
  * @since 1.3.0
  */
-function sempress_customize_css() {
-	global $themecolors;
-?>
-	<style type="text/css" id="sempress-custom-colors">
-		body { text-shadow: 0 1px 0 <?php echo get_theme_mod( 'sempress_shadowcolor', '#' . $themecolors['shadow'] ); ?>; }
-		body, a { color: <?php echo get_theme_mod( 'sempress_textcolor', '#' . $themecolors['text'] ); ?>; }
-		.widget, #access {
-			border-bottom: 1px solid <?php echo get_theme_mod( 'sempress_bordercolor', 'inherit' ); ?>;
-			-moz-box-shadow: <?php echo get_theme_mod( 'sempress_shadowcolor', 'inherit' ); ?> 0 1px 0 0;
-			-webkit-box-shadow: <?php echo get_theme_mod( 'sempress_shadowcolor', 'inherit' ); ?> 0 1px 0 0;
-			box-shadow: <?php echo get_theme_mod( 'sempress_shadowcolor', 'inherit' ); ?> 0 1px 0 0;
-		}
-		article.comment {
-			border-top: 1px solid <?php echo get_theme_mod( 'sempress_shadowcolor', 'inherit' ); ?>;
-			-moz-box-shadow: <?php echo get_theme_mod( 'sempress_bordercolor', 'inherit' ); ?> 0 -1px 0 0;
-			-webkit-box-shadow: <?php echo get_theme_mod( 'sempress_bordercolor', 'inherit' ); ?> 0 -1px 0 0;
-			box-shadow: <?php echo get_theme_mod( 'sempress_bordercolor', 'inherit' ); ?> 0 -1px 0 0;
-		}
-	</style>
-<?php
-}
-add_action( 'wp_head', 'sempress_customize_css' );
-
+ /**
+ *function sempress_customize_css() {
+ *	global $themecolors;
+ *?>
+ *	<style type="text/css" id="sempress-custom-colors">
+ *		body { text-shadow: 0 1px 0 <?php echo get_theme_mod( 'sempress_shadowcolor', '#' . $themecolors['shadow'] ); ?>; }
+ *		body, a { color: <?php echo get_theme_mod( 'sempress_textcolor', '#' . $themecolors['text'] ); ?>; }
+ *		.widget, #access {
+ *			border-bottom: 1px solid <?php echo get_theme_mod( 'sempress_bordercolor', 'inherit' ); ?>;
+ *			-moz-box-shadow: <?php echo get_theme_mod( 'sempress_shadowcolor', 'inherit' ); ?> 0 1px 0 0;
+ *			-webkit-box-shadow: <?php echo get_theme_mod( 'sempress_shadowcolor', 'inherit' ); ?> 0 1px 0 0;
+ *			box-shadow: <?php echo get_theme_mod( 'sempress_shadowcolor', 'inherit' ); ?> 0 1px 0 0;
+ *		}
+ *		article.comment {
+ *			border-top: 1px solid <?php echo get_theme_mod( 'sempress_shadowcolor', 'inherit' ); ?>;
+ *			-moz-box-shadow: <?php echo get_theme_mod( 'sempress_bordercolor', 'inherit' ); ?> 0 -1px 0 0;
+ *			-webkit-box-shadow: <?php echo get_theme_mod( 'sempress_bordercolor', 'inherit' ); ?> 0 -1px 0 0;
+ *			box-shadow: <?php echo get_theme_mod( 'sempress_bordercolor', 'inherit' ); ?> 0 -1px 0 0;
+ *		}
+ *	</style>
+ *<?php
+ *}
+ *add_action( 'wp_head', 'sempress_customize_css' );
+*/
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */

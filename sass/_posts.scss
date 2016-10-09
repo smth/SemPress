@@ -4,11 +4,8 @@
 article.page,
 article.post,
 article.attachment {
-  @include box-shadow(0, 1px, 5px, 0, rgba(0,0,0,0.2));
   position: relative;
-  @include rounded($border-radius);
   background-color: white;
-  border: 1px solid #ccc;
 }
 article {
   address {
@@ -26,16 +23,13 @@ header .entry-meta {
   padding-bottom: 14px;
 }
 footer.entry-meta {
-  padding: 0px 34px;
   margin-bottom: 34px;
 }
 .entry-content,
 .entry-summary,
 .entry-title {
-  color: #3f3f3f;
 
   a {
-    color: $blue;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
@@ -48,20 +42,13 @@ footer.entry-meta {
   line-height: 27px;
   margin-bottom: 34px;
 }
-.entry-content,
-.entry-title,
-.entry-meta,
-.entry-summary {
-  padding: 0 34px;
-  text-shadow: none;
-}
 .entry-meta {
   clear: both;
   display: block;
   font-size: 0.9em;
 
   &, a {
-    color: #777;
+    color: inherit;
   }
 }
 .entry-header {

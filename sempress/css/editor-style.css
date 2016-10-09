@@ -1,11 +1,3 @@
-body#tinymce.wp-editor {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #555;
-  font-weight: 300;
-}
-body#tinymce.wp-editor a {
-  color: #555;
-}
 body#tinymce.wp-editor a:hover {
   text-decoration: none;
 }

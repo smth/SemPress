@@ -40,6 +40,13 @@ module.exports = function (grunt) {
           dest: 'sempress'
         }]
       }
+    },
+    watch: {
+      sass: {
+        // We watch and compile sass files as normal but don't live reload here
+        files: ['sass/*.scss'],
+        tasks: ['sass'],
+      }
     }
   });
 
@@ -48,5 +55,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['sass', 'replace']);
+  grunt.registerTask('default', ['sass', 'replace', 'watch']);
 };
